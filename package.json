@@ -1,0 +1,36 @@
+{
+	"name": "dtop",
+	"version": "1.0.0",
+	"type": "module",
+	"description": "An interactive TUI desktop entry file creator for GNU/Linux",
+	"scripts": {
+		"build": "npm urn upgrade && npm urn edit-version && tsc",
+		"dev": "tsx src/index.ts",
+		"edit-version": "tsx scripts/editVersion.ts",
+		"prepublishOnly": "npm urn build",
+		"upgrade": "ncu -u && npm i"
+	},
+	"bin": {
+		"feces": "dist/index.js"
+	},
+	"author": {
+		"name": "Akhil Pillai",
+		"email": "dtop@akpi.is-a.dev",
+		"url": "https://akpi.is-a.dev"
+	},
+	"license": "GPL-3.0",
+	"dependencies": {
+		"@commander-js/extra-typings": "^11.1.0",
+		"colors": "^1.4.0",
+		"npm-registry-fetch": "^16.1.0",
+		"readline-sync": "^1.4.10"
+	},
+	"devDependencies": {
+		"@types/node": "^20.9.0",
+		"@types/npm-registry-fetch": "^8.0.7",
+		"@types/readline-sync": "^1.4.7",
+		"npm-check-updates": "^16.14.6",
+		"tsx": "^4.1.1",
+		"typescript": "^5.2.2"
+	}
+}
